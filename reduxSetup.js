@@ -1,22 +1,22 @@
-const INITIAL_STATE = { mood: (⊙ᗜ⊙) };
+const INITIAL_STATE = { mood: "(⊙ᗜ⊙)" };
 
-function rootReducer(state = INITIAL_STATE, action) {
+function moodReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case "LOVE":
-      return { ...state, mood: "✿♥‿♥✿" };
+      return { ...state, mood: action.payload };
 
     case "SLEEP":
-      return { ...state, mood: "( ⓥωⓥ)" };
+      return { ...state, mood: action.payload };
 
     case "GRIN":
-      return { ...state, mood: "(￣ー￣)" };
+      return { ...state, mood: action.payload };
 
     case "RUN":
-      return { ...state, mood: "┗(＾0＾)┓" };
+      return { ...state, mood: action.payload };
 
     default:
       return state;
   }
 }
 
-const store = Redux.createStore(rootReducer);
+const store = Redux.createStore(moodReducer);
